@@ -41,14 +41,14 @@ module.exports    = function(paperclip) {
 
     for (i = 0; i < supportedMeta.length; i++) {
       var tag = supportedMeta[i]
-      if (self.paperclip.document[tag]) {
-        tags[tag] = self.paperclip.document[tag];
+      if (self.paperclip.class().document[tag]) {
+        tags[tag] = self.paperclip.class().document[tag];
       }
     }
-    if (self.paperclip.document.comment != undefined) {
+    if (self.paperclip.class().document.comment != undefined) {
       tags.comment = {
-        language: (self.paperclip.document.language ? self.paperclip.document.language : 'eng'),
-        text: self.paperclip.document.comment
+        language: (self.paperclip.class().document.language ? self.paperclip.class().document.language : 'eng'),
+        text: self.paperclip.class().document.comment
       }
     }
 
@@ -68,8 +68,8 @@ module.exports    = function(paperclip) {
 
     tags.encodingTechnology = 'lame';
 
-    var outfile = self.paperclip.file.path + randomstring.generate() +".mp3"
-    input = fs.createReadStream(self.paperclip.file.path);
+    var outfile = self.paperclip.file().file.path + randomstring.generate() +".mp3"
+    input = fs.createReadStream(self.paperclip.file().file.path);
     output = fs.createWriteStream(outfile);
 
     output.on('finish', function() {

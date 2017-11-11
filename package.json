@@ -1,18 +1,25 @@
 {
-  "name": "node-paperclip-lamejs",
+  "name": "node-paperclip-lame",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a node-paperclip plugin that uses the lame and encodes wavs to mp3s and allows you to add tags.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Scott Ballantyne",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ballantyne/node-paperclip-lame.git"
+  },
   "dependencies": {
     "klass": "^1.4.1",
     "lamejs": "^1.2.0",
     "node-id3": "^0.1.0",
     "node-lame": "^1.0.4",
     "wav": "^1.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1"
   }
 }
