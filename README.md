@@ -1,5 +1,5 @@
 
-node-paperclip-lame
+node-paperclip-audio
 =========
 
 This is a plugin that works with node-paperclip.  I takes wav files and encodes them to mp3 and adds tags. 

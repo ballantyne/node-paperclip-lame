@@ -1,5 +1,5 @@
 {
-  "name": "node-paperclip-lame",
+  "name": "node-paperclip-audio",
   "version": "1.0.0",
   "description": "This is a node-paperclip plugin that uses the lame and encodes wavs to mp3s and allows you to add tags.",
   "main": "index.js",
