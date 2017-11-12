@@ -1,5 +1,5 @@
 
-node-paperclip-audio
+node-paperclip-lame
 =========
 
 This is a plugin that works with node-paperclip.  I takes wav files and encodes them to mp3 and adds tags. 
@@ -12,7 +12,7 @@ sudo apt-get install lame
 Or for windows, maybe try http://kb.madcapsoftware.com/mobile/Basic/Content/Mimic/General/GEN1004M_-_Installing_LAME_MP3_Encoder_on_Windows_Vista.htm ?  I haven't tested the windows installation.  If you are successful at installing lame on windows and want to help out, submit a pull request and I will add that information here.
 
 ```bash
-npm install node-paperclip-audio --save
+npm install node-paperclip-lame --save
 ```
 
 Here is an example of a model that uses the mongoose plugin.
