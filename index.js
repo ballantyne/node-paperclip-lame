@@ -1,18 +1,18 @@
-const lame         = require("lame");
-const fs           = require('fs');
-const randomstring = require('randomstring');
-const NodeID3      = require('node-id3')
-const wav          = require('wav');
-const apic         = require('./apic');
+const lame            = require("lame");
+const fs              = require('fs');
+const randomstring    = require('randomstring');
+const NodeID3         = require('node-id3')
+const wav             = require('wav');
+const apic            = require('./apic');
 
 
-module.exports    = function(paperclip) {
-  var obj = {};
+module.exports        = function(paperclip) {
+  var obj             = {};
 
-  obj.paperclip  = paperclip;
+  obj.paperclip       = paperclip;
 
-  obj.perform = function(options, next) {
-    var self  = this;
+  obj.perform         = function(options, next) {
+    var self          = this;
 
     var supportedMeta = [ 'album','bpm','composer','genre','copyright','date',
                           'playlistDelay','encodedBy','textWriter','fileType',
@@ -40,13 +40,13 @@ module.exports    = function(paperclip) {
     var tags = {};
 
     for (i = 0; i < supportedMeta.length; i++) {
-      var tag = supportedMeta[i]
+      var tag         = supportedMeta[i]
       if (self.paperclip.class().document[tag]) {
         tags[tag] = self.paperclip.class().document[tag];
       }
     }
     if (self.paperclip.class().document.comment != undefined) {
-      tags.comment = {
+      tags.comment    = {
         language: (self.paperclip.class().document.language ? self.paperclip.class().document.language : 'eng'),
         text: self.paperclip.class().document.comment
       }
@@ -86,11 +86,17 @@ module.exports    = function(paperclip) {
     reader.on('format', onFormat);
 
     function onFormat (format) {
+
       var encoder = new lame.Encoder(format);
       reader.pipe(encoder).pipe(output);
+    
     }
+    
     input.pipe(reader);
+  
   }
+  
   return obj;
+
 };
 

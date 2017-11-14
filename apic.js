@@ -32,7 +32,7 @@ module.exports = function(id) {
   switch(id) {
     case 0:
       return {id: 0, name: 'Other'};
-
+      
     case 1:
       return {id: 1, name: 'file icon'};
     
